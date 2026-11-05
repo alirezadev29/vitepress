@@ -1,0 +1,13 @@
+:root {
+  --vp-font-family-base: 'Vazirmatn', sans-serif;
+  --vp-c-brand-1: #2563eb;
+}
+.vp-doc pre, .vp-doc code {
+  direction: ltr !important;
+  text-align: left !important;
+}
+.concept-card {
+  background-color: var(--vp-c-bg-soft);
+  border-right: 4px solid var(--vp-c-brand-1);
+  padding: 1rem; border-radius: 8px; margin: 1rem 0;
+}
