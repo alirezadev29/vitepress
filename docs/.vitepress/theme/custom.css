@@ -1,13 +1,121 @@
+/* =========================================================
+   TurboFront 6 - Premium Documentation Theme
+   ========================================================= */
+
+/* 1. تنظیمات پایه و رنگ‌بندی برند */
 :root {
-  --vp-font-family-base: 'Vazirmatn', sans-serif;
-  --vp-c-brand-1: #2563eb;
+  /* فونت استاندارد */
+  --vp-font-family-base: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+  
+  /* رنگ اصلی سایت (Indigo Premium) */
+  --vp-c-brand-1: #4f46e5;
+  --vp-c-brand-2: #4338ca;
+  --vp-c-brand-3: #3730a3;
+  --vp-c-brand-soft: rgba(79, 70, 229, 0.14);
+
+  /* تنظیمات کدها */
+  --vp-code-font-size: 0.9em;
+  --vp-code-color: #e2e8f0;
 }
-.vp-doc pre, .vp-doc code {
+
+/* 2. راست‌چین کردن کل ساختار (با حفظ چپ‌چینی کدها) */
+html[dir="rtl"] {
+  direction: rtl;
+}
+.vp-doc {
+  direction: rtl;
+  text-align: right;
+}
+.vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4 {
+  border-bottom: none; /* حذف خط زیر تیترها */
+  letter-spacing: 0;
+}
+/* کدهای برنامه‌نویسی همیشه باید چپ‌چین باشند */
+.vp-doc pre, .vp-doc code, .vp-doc .line-numbers-wrapper {
   direction: ltr !important;
   text-align: left !important;
+  font-family: 'JetBrains Mono', Consolas, monospace !important;
 }
+
+/* 3. زیباسازی کارت‌های مفهومی (concept-card) */
 .concept-card {
-  background-color: var(--vp-c-bg-soft);
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
   border-right: 4px solid var(--vp-c-brand-1);
-  padding: 1rem; border-radius: 8px; margin: 1rem 0;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.concept-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(79, 70, 229, 0.12);
+}
+.concept-card__title {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--vp-c-brand-1);
+  margin-bottom: 0.75rem;
+}
+
+/* 4. زیباسازی جداول (Tables) */
+.vp-doc table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+.vp-doc th {
+  background-color: var(--vp-c-bg-soft);
+  font-weight: 700;
+  text-align: right;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+.vp-doc td {
+  text-align: right;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  transition: background-color 0.2s;
+}
+.vp-doc tr:hover td {
+  background-color: var(--vp-c-bg-alt);
+}
+.vp-doc tr:last-child td {
+  border-bottom: none;
+}
+
+/* 5. زیباسازی بلوک‌های هشدار (Tip, Warning, Danger) */
+.custom-block {
+  border-radius: 10px !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  padding: 16px 20px !important;
+  margin: 1.5rem 0 !important;
+}
+.custom-block .custom-block-title {
+  font-weight: 800 !important;
+}
+
+/* 6. استایل‌دهی به سایدبار (Sidebar) */
+.VPSidebar {
+  background-color: var(--vp-c-bg) !important;
+  border-left: 1px solid var(--vp-c-divider);
+}
+.VPSidebarItem.is-active > .item > .link > .text {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 700;
+}
+
+/* 7. زیباسازی صفحه اصلی (Hero Section) */
+.VPHero .name, .VPHero .text {
+  background: -webkit-linear-gradient(120deg, var(--vp-c-brand-1), #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
