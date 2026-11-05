@@ -6,7 +6,7 @@ export default defineConfig({
   description: 'تمرین پروژه‌ای توربوفرانت ۶',
   cleanUrls: true,
   head: [
-    ['html', { dir: 'rtl' }], // راست‌چین کردن کل سایت
+    ['html', { dir: 'rtl' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { href: 'https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap', rel: 'stylesheet' }]
   ],
@@ -14,7 +14,7 @@ export default defineConfig({
     nav: [
       { text: 'خانه', link: '/' },
       { text: 'مبانی وب', link: '/guide/client-server' },
-      { text: 'ابزارها', link: '/guide/tools/git' },
+      { text: 'ابزارها', link: '/tools/vscode-terminal' }, // 👈 اصلاح شد
       { text: 'هوش مصنوعی', link: '/ai/ai-assisted-dev' }
     ],
     sidebar: [
@@ -30,19 +30,21 @@ export default defineConfig({
       {
         text: 'ابزارهای پایه',
         items: [
-          { text: 'VS Code و ترمینال', link: '/guide/tools/vscode-terminal' },
-          { text: 'Git و GitHub', link: '/guide/tools/git' },
-          { text: 'DevTools', link: '/guide/tools/devtools' }
+          { text: 'VS Code و ترمینال', link: '/tools/vscode-terminal' }, // 👈 اصلاح شد
+          { text: 'Git و GitHub', link: '/tools/git' },                 // 👈 اصلاح شد
+          { text: 'DevTools', link: '/tools/devtools' }                 // 👈 اصلاح شد
         ]
       },
       {
         text: 'توسعه AI',
         items: [
-          { text: 'مقدمات توسعه مبتنی بر AI', link: '/ai/ai-assisted-dev' }
+          { text: 'مقدمات توسعه مبتنی بر AI', link: '/ai/ai-assisted-dev' },
+          { text: 'نسخه‌گذاری معنایی (SemVer)', link: '/guide/semver' }
         ]
       }
     ],
     outline: { label: 'در این صفحه' },
-    docFooter: { prev: 'قبلی', next: 'بعدی' }
+    docFooter: { prev: 'قبلی', next: 'بعدی' },
+    returnToTopLabel: 'بازگشت به بالا'
   }
 })
